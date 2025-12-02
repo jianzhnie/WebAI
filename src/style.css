@@ -9,15 +9,21 @@
   --color-primary: #2c3e50;
   --color-code-bg: #f4f4f4;
   --color-footer: #7f8c8d;
+  --color-border: #ddd;
+  --color-shadow: rgba(0, 0, 0, 0.1);
   --max-width: 800px;
   --radius-code: 3px;
   --radius-pre: 5px;
+  --radius-media: 8px;
   --padding-body: 20px;
   --padding-pre: 1rem;
   --margin-header-bottom: 2rem;
   --margin-container-top: 2rem;
   --margin-footer-top: 3rem;
+  --margin-media: 1.5rem 0;
   --font-size-footer: 0.9rem;
+  --font-size-caption: 0.85rem;
+  --max-media-width: 100%;
 }
 
 body {
@@ -62,4 +68,135 @@ footer {
   text-align: center;
   color: var(--color-footer);
   font-size: var(--font-size-footer);
+}
+
+/* 富文本媒体元素样式 */
+
+/* 图片规范 */
+img {
+  max-width: var(--max-media-width);
+  height: auto;
+  display: block;
+  margin: var(--margin-media) auto;
+  border-radius: var(--radius-media);
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+/* 响应式图片 */
+figure {
+  margin: var(--margin-media) auto;
+  padding: 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: var(--font-size-caption);
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* 视频规范 */
+video {
+  max-width: var(--max-media-width);
+  height: auto;
+  display: block;
+  margin: var(--margin-media) auto;
+  border-radius: var(--radius-media);
+  background-color: #000;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+/* 响应式 iframe 容器 */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-media-width);
+  padding-bottom: 56.25%;
+  /* 16:9 宽高比 */
+  height: 0;
+  margin: var(--margin-media) auto;
+  border-radius: var(--radius-media);
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 表格规范 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--margin-media) auto;
+  border-radius: var(--radius-media);
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+table th {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* 音频规范 */
+audio {
+  width: 100%;
+  max-width: var(--max-media-width);
+  display: block;
+  margin: var(--margin-media) auto;
+  border-radius: var(--radius-media);
+}
+
+/* 嵌入式内容 */
+/* 保证所有媒体元素居中 */
+img,
+video,
+audio,
+canvas,
+embed,
+iframe,
+.video-container {
+  display: block;
+  margin: var(--margin-media) auto;
+  max-width: var(--max-media-width);
+}
+
+embed,
+iframe {
+  border-radius: var(--radius-media);
+  border: 1px solid var(--color-border);
+}
+
+/* 图表/画布规范 */
+canvas {
+  max-width: var(--max-media-width);
+  height: auto;
+  display: block;
+  margin: var(--margin-media) auto;
+  border-radius: var(--radius-media);
+  border: 1px solid var(--color-border);
 }
