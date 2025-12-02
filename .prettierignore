@@ -1,0 +1,18 @@
+# Ignore artifacts
+node_modules/
+dist/
+build/
+docs/
+.cache/
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+node_modules/
+dist/
+build/
+*.min.js
+coverage/
+.env
+.env.local
+.env.*.local

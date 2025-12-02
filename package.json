@@ -1,0 +1,49 @@
+{
+  "name": "webai",
+  "version": "1.0.0",
+  "description": "A well-structured JavaScript project",
+  "main": "src/main.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "npm run lint && npm run format:check",
+    "test": "node tests/test.example.js",
+    "test:watch": "nodemon tests/test.example.js",
+    "dev": "npx serve .",
+    "build": "mkdir -p dist && cp -r src/* dist/ && cp index.html dist/",
+    "clean": "rm -rf dist/",
+    "docs": "jsdoc -c jsdoc.json",
+    "docs:clean": "rm -rf docs/",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "javascript",
+    "es6",
+    "web"
+  ],
+  "author": "Developer",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.3",
+    "serve": "^14.2.4",
+    "nodemon": "^3.0.1",
+    "jsdoc": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
