@@ -4,7 +4,7 @@
   "description": "A well-structured JavaScript project",
   "main": "src/main.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . && htmlhint *.html",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -33,6 +33,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.3",
+    "htmlhint": "^1.1.4",
     "serve": "^14.2.4",
     "nodemon": "^3.0.1",
     "jsdoc": "^4.0.0"
@@ -40,6 +41,10 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "htmlhint",
       "prettier --write"
     ]
   },
